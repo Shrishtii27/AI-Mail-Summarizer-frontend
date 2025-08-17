@@ -28,7 +28,7 @@ function App() {
     console.log("Transcript value being sent:", transcript);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/summarize', {
+      const response = await axios.post('http://https://ai-mail-summarizer-backend.vercel.app//api/summarize', {
         transcript,
         prompt
       });
@@ -45,7 +45,7 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      await axios.post('http://localhost:5000/api/share', {
+      await axios.post('http://https://ai-mail-summarizer-backend.vercel.app//api/share', {
         summary: editableSummary,
         recipients: emails.split(',').map(email => email.trim())
       });
